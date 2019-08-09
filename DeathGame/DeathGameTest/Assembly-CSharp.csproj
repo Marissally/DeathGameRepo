@@ -99,9 +99,15 @@
      <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
      <Compile Include="Assets\Scripts\ChangeMouse.cs" />
+     <Compile Include="Assets\Scripts\FollowMousePosition.cs" />
+     <Compile Include="Assets\Scripts\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\ItemClickHandler.cs" />
+     <Compile Include="Assets\Scripts\ItemDatabase.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\ToggleActive.cs" />
+     <Compile Include="Assets\Scripts\UIInventory.cs" />
+     <Compile Include="Assets\Scripts\UIItem.cs" />
      <Compile Include="Assets\YarnSpinner\Code\DialogueRunner.cs" />
      <Compile Include="Assets\YarnSpinner\Examples\DemoScripts\CameraFollow.cs" />
      <Compile Include="Assets\YarnSpinner\Examples\DemoScripts\ExampleDialogueUI.cs" />
