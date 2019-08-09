@@ -9,6 +9,7 @@ public class ChangeMouse : MonoBehaviour {
     public Texture2D TalkCursor;
     public Texture2D LookCursor;
     public Texture2D GrabCursor;
+    public string CurrentSelection = null;
 
 
 	// Use this for initialization
@@ -25,21 +26,25 @@ public class ChangeMouse : MonoBehaviour {
             if(hit.collider.gameObject.tag == "Character")
             {
                 Cursor.SetCursor(TalkCursor, Vector2.zero, CursorMode.Auto);
+                CurrentSelection = "Character";
             }
 
             if (hit.collider.gameObject.tag == "Item")
             {
                 Cursor.SetCursor(GrabCursor, Vector2.zero, CursorMode.Auto);
+                CurrentSelection = "Item";
             }
 
             if (hit.collider.gameObject.tag == "Detail")
             {
                 Cursor.SetCursor(LookCursor, Vector2.zero, CursorMode.Auto);
+                CurrentSelection = "Detail";
             }
 
             else if(hit.collider.gameObject.tag == "Untagged")
             {
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                CurrentSelection = null;
             }
         }
 

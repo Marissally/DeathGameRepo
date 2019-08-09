@@ -13,11 +13,13 @@ namespace Yarn.Unity.Example
         public List<string> inventory;
         public GameObject TalkUI;
         private NavMeshAgent navAgent;
+        private ChangeMouse MouseStuff;
 
         // Use this for initialization
         void Start()
         {
             navAgent = GetComponent<NavMeshAgent>();
+            MouseStuff = GetComponent<ChangeMouse>();
         }
 
         // Update is called once per frame
@@ -25,7 +27,35 @@ namespace Yarn.Unity.Example
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+                if(MouseStuff.CurrentSelection == "Character")
+                {
+                    RaycastHit hit;
+                    var nameRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    if (Physics.Raycast(nameRay, out hit))
+                    {
+                        Talk(hit.collider.gameObject.GetComponent<NPC>());
+                    }
+                }
+                if(MouseStuff.CurrentSelection == "Item")
+                {
+                    RaycastHit hit;
+                    var nameRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    if (Physics.Raycast(nameRay, out hit))
+                    {
+                        Take(hit.collider.gameObject);
+                    }
+                }
+                if(MouseStuff.CurrentSelection == "Detail")
+                {
+                    RaycastHit hit;
+                    var nameRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    if (Physics.Raycast(nameRay, out hit))
+                    {
+                        //Look();
+                    }
+                }
+
+                else if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
                 {
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
