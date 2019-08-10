@@ -1,0 +1,29 @@
+title: TestItem Look at
+tags: 
+colorID: 0
+position: 266,152
+---
+It's a red cube?
+Maybe I can do something with it.
+===
+title: TestItem Use on TestCharacter
+tags: 
+colorID: 0
+position: 786,444
+---
+TestCharacter: I don't know what that is.
+===
+title: TestItem Use on TestDetail
+tags: 
+colorID: 0
+position: 268,422
+---
+I inserted the cube? I guess?
+===
+title: TestItem Take
+tags: 
+colorID: 0
+position: 793,151
+---
+Weird.
+===

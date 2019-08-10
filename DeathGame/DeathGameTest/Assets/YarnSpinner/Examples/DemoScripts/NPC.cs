@@ -36,6 +36,9 @@ namespace Yarn.Unity.Example {
 
         [FormerlySerializedAs("startNode")]
         public string talkToNode = "";
+        public string lookAtNode = "";
+        public string useOnNode = "";
+        public string takeNode = "";
 
         [Header("Optional")]
         public TextAsset scriptToLoad;

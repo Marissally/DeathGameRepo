@@ -1,2 +1,0 @@
-In PlayerScript:
-	>Character moves when clicking on interactables

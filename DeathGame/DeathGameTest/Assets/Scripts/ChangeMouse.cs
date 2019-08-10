@@ -20,6 +20,11 @@ public class ChangeMouse : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        //if (Input.GetMouseButton(1))
+        //{
+        //    Cursor.SetCursor(LookCursor, Vector2.zero, CursorMode.Auto);
+        //    CurrentSelection = nu
+        //}
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out hit))
         {

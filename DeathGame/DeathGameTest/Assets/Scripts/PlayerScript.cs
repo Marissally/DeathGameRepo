@@ -41,7 +41,7 @@ namespace Yarn.Unity.Example
                     }
                     else if (Physics.Raycast(nameRay, out hit))
                     {
-                        Talk(hit.collider.gameObject.GetComponent<NPC>());
+                        StartDialogue(hit.collider.gameObject.GetComponent<NPC>(), "Talk");
                     }
                 }
                 if(MouseStuff.CurrentSelection == "Item")
@@ -92,15 +92,32 @@ namespace Yarn.Unity.Example
             }
         }
 
-        void Talk(NPC target)
+        void StartDialogue(NPC target, string dialogueType)
         {
-            FindObjectOfType<DialogueRunner>().StartDialogue(target.talkToNode);
+            if(dialogueType == "Take" && target.takeNode != null)
+            {
+                FindObjectOfType<DialogueRunner>().StartDialogue(target.takeNode);
+            }
+            if(dialogueType == "Look" && target.lookAtNode != null)
+            {
+                FindObjectOfType<DialogueRunner>().StartDialogue(target.lookAtNode);
+            }
+            if(dialogueType == "Talk" && target.talkToNode != null)
+            {
+                FindObjectOfType<DialogueRunner>().StartDialogue(target.talkToNode);
+            }
+            if(dialogueType == "Use" && target.useOnNode != null)
+            {
+                print(target.useOnNode + target.name);
+                FindObjectOfType<DialogueRunner>().StartDialogue(target.useOnNode);
+            }
         }
 
         void Take(GameObject item)
         {
             //Take item and give dialogue
             print(item.name);
+            StartDialogue(item.transform.parent.GetComponent<NPC>(), "Take");
             inventory.GiveItem(item.name);
             Destroy(item);
         }
@@ -108,13 +125,18 @@ namespace Yarn.Unity.Example
         void Look(NPC thingToLookAt)
         {
             //Give description of item in textbox
-            Talk(thingToLookAt);
+            StartDialogue(thingToLookAt, "Look");
         }
 
         void Use()
         {
             Debug.Log("A use!");
-            Talk(selectedItem.GetComponent<NPC>());
+            print(selectedItem.name);
+            print(selectedItem.GetComponent<Image>().sprite.name);
+            GameObject itemUsed = GameObject.Find(selectedItem.GetComponent<Image>().sprite.name + "Dialogue");
+            print(itemUsed.name);
+            StartDialogue(itemUsed.GetComponent<NPC>(), "Use");
+            itemUsed = null;
             selectedItem.UpdateItem(null);
         }
     }

@@ -1,0 +1,10 @@
+Yarn is surprisingly simple once you get used to it.
+
+Here's some steps.
+1. Open Yarn
+2. Edit the Node title to be whatever condition you want it to be activated under (IE: "Use" for when you use the item)
+3. Add dialogue
+4. Remember to save as a Yarn file!
+5. Direct DialogueRunner (the ingame object) to the file. Add dialogue slots if you need to.
+
+Optional: Add NPC script to object and direct it to the proper nodes.
