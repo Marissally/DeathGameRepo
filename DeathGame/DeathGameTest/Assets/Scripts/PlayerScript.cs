@@ -19,6 +19,7 @@ namespace Yarn.Unity.Example
         // Use this for initialization
         void Start()
         {
+            controllable = true;
             inventory = GetComponent<Inventory>();
             navAgent = GetComponent<NavMeshAgent>();
             MouseStuff = GetComponent<ChangeMouse>();
@@ -28,14 +29,13 @@ namespace Yarn.Unity.Example
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && controllable)
             {
-                Debug.Log(selectedItem.name);
                 if(MouseStuff.CurrentSelection == "Character")
                 {
                     RaycastHit hit;
                     var nameRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    if (Physics.Raycast(nameRay, out hit) && selectedItem != null)
+                    if (Physics.Raycast(nameRay, out hit) && selectedItem.item != null)
                     {
                         Use();
                     }
@@ -57,14 +57,18 @@ namespace Yarn.Unity.Example
                 {
                     RaycastHit hit;
                     var nameRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    if (Physics.Raycast(nameRay, out hit) && selectedItem != null)
+                    if (Physics.Raycast(nameRay, out hit) && selectedItem.item != null)
                     {
                         Use();
                     }
                 }
 
-                else if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+                else if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject() && MouseStuff.CurrentSelection == null)
                 {
+                    string currentSelection = MouseStuff.CurrentSelection;
+                    print(currentSelection);
+                    print(MouseStuff.CurrentSelection);
+                    Debug.Log("Move");
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
 

@@ -29,6 +29,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using CsvHelper;
+using Yarn.Unity.Example;
 
 namespace Yarn.Unity
 {
@@ -211,6 +212,8 @@ namespace Yarn.Unity
             // Mark that we're in conversation.
             isDialogueRunning = true;
 
+            GameObject.Find("Player").GetComponent<PlayerScript>().controllable = false;
+
             // Signal that we're starting up.
             yield return StartCoroutine(this.dialogueUI.DialogueStarted());
 
@@ -262,6 +265,7 @@ namespace Yarn.Unity
             // to allow time for any animations that might run while transitioning
             // out of a conversation (ie letterboxing going away, etc)
             isDialogueRunning = false;
+            GameObject.Find("Player").GetComponent<PlayerScript>().controllable = true;
         }
 
         /// Clear the dialogue system
