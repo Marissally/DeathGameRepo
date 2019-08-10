@@ -107,10 +107,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 813, y: 492}
-  m_MaxSize: {x: 22008, y: 14042}
+  m_MinSize: {x: 809, y: 492}
+  m_MaxSize: {x: 22004, y: 14042}
   vertical: 0
-  controlID: 11019
+  controlID: 10026
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -131,10 +131,10 @@ MonoBehaviour:
     y: 0
     width: 962
     height: 947
-  m_MinSize: {x: 336, y: 492}
-  m_MaxSize: {x: 14006, y: 14042}
+  m_MinSize: {x: 332, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
-  controlID: 11020
+  controlID: 10027
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -182,10 +182,10 @@ MonoBehaviour:
     y: 671
     width: 962
     height: 276
-  m_MinSize: {x: 336, y: 271}
-  m_MaxSize: {x: 14006, y: 10021}
+  m_MinSize: {x: 332, y: 271}
+  m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
-  controlID: 10816
+  controlID: 9993
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -399,9 +399,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 872.4814, y: 694.9221, z: -5.5}
+    m_Target: {x: 541.0501, y: 367.7465, z: -12.25}
     speed: 2
-    m_Value: {x: 872.4814, y: 694.9221, z: -5.5}
+    m_Value: {x: 541.0501, y: 367.7465, z: -12.25}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -433,9 +433,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 616.5947
+    m_Target: 1269.4237
     speed: 2
-    m_Value: 616.5947
+    m_Value: 1269.4237
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -509,20 +509,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Resources/Items
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Resources/Items
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Marissa\Works\DeathGameRepo\DeathGame\DeathGameTest
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 149}
-    m_SelectedIDs: c60a0000
-    m_LastClickedID: 2758
-    m_ExpandedIDs: 00000000440a0000480b0000700b0000840b0000300c00008c0c00004e0d0000be0d0000323100003431000036310000383100003a3100003c3100003e31000040310000423100007e31000000ca9a3b
+    scrollPos: {x: 0, y: 114}
+    m_SelectedIDs: a20c0000
+    m_LastClickedID: 3234
+    m_ExpandedIDs: 00000000500a0000580a00005a0b0000820b0000960b0000420c0000a20c0000640d0000d60d0000ce300000d0300000d2300000d4300000d6300000d8300000da300000dc300000de30000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -550,7 +550,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000440a0000480b0000700b0000840b0000300c00008c0c00004e0d0000be0d0000323100003431000036310000383100003a3100003c3100003e31000040310000423100007e31000000ca9a3b
+    m_ExpandedIDs: 00000000500a0000580a00005a0b0000820b0000960b0000420c0000a20c0000640d0000d60d0000ce300000d0300000d2300000d4300000d6300000d8300000da300000dc300000de30000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -578,7 +578,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000ac1e0000c01e0000e40a0000e4340000683e00009c0a0000343000000c25000000000000484a00000ac4feff
+    m_ExpandedInstanceIDs: c6230000ac1e0000c01e0000e40a0000e4340000683e00009c0a0000343000000c25000000000000484a00000ac4feffd00a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -633,7 +633,7 @@ MonoBehaviour:
   m_AnimEditor: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -117836
+  m_LastSelectedObjectID: 16706
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -688,7 +688,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 1055feff8855feff9c55feff4269feff5669feff6a69feff7e69feff9269feffa669feffba69feffce69feff3e80feff5280feff6680fefffa99feffe6fbffff00000000b60e0000c40e0000e60f0000fe0f0000
+    m_ExpandedIDs: b83bffffbc4cfffff6cbffffe6fbffff00000000c00e0000900f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

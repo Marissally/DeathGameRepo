@@ -47,7 +47,8 @@ public class UIItem : MonoBehaviour, IPointerClickHandler {
                 selectedItem.UpdateItem(this.item);
                 UpdateItem(null);
             }
-        }else if(selectedItem.item != null)
+        }
+        else if(selectedItem.item != null)
         {
             UpdateItem(selectedItem.item);
             selectedItem.UpdateItem(null);

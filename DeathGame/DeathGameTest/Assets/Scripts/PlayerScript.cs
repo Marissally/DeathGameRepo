@@ -10,16 +10,19 @@ namespace Yarn.Unity.Example
     {
 
         public bool controllable;
-        public List<string> inventory;
+        public Inventory inventory;
         public GameObject TalkUI;
+        public UIItem selectedItem;
         private NavMeshAgent navAgent;
         private ChangeMouse MouseStuff;
 
         // Use this for initialization
         void Start()
         {
+            inventory = GetComponent<Inventory>();
             navAgent = GetComponent<NavMeshAgent>();
             MouseStuff = GetComponent<ChangeMouse>();
+            selectedItem = GameObject.Find("SelectedItem").GetComponent<UIItem>();
         }
 
         // Update is called once per frame
@@ -27,11 +30,16 @@ namespace Yarn.Unity.Example
         {
             if (Input.GetMouseButtonDown(0))
             {
+                Debug.Log(selectedItem.name);
                 if(MouseStuff.CurrentSelection == "Character")
                 {
                     RaycastHit hit;
                     var nameRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    if (Physics.Raycast(nameRay, out hit))
+                    if (Physics.Raycast(nameRay, out hit) && selectedItem != null)
+                    {
+                        Use();
+                    }
+                    else if (Physics.Raycast(nameRay, out hit))
                     {
                         Talk(hit.collider.gameObject.GetComponent<NPC>());
                     }
@@ -45,13 +53,13 @@ namespace Yarn.Unity.Example
                         Take(hit.collider.gameObject);
                     }
                 }
-                if(MouseStuff.CurrentSelection == "Detail")
+                if (MouseStuff.CurrentSelection == "Detail")
                 {
                     RaycastHit hit;
                     var nameRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    if (Physics.Raycast(nameRay, out hit))
+                    if (Physics.Raycast(nameRay, out hit) && selectedItem != null)
                     {
-                        //Look();
+                        Use();
                     }
                 }
 
@@ -66,6 +74,18 @@ namespace Yarn.Unity.Example
                     }
                 }
             }
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (MouseStuff.CurrentSelection == "Character" || MouseStuff.CurrentSelection == "ItemInInventory" || MouseStuff.CurrentSelection == "Detail")
+                {
+                    RaycastHit hit;
+                    var nameRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    if (Physics.Raycast(nameRay, out hit))
+                    {
+                        Look(hit.collider.gameObject.GetComponent<NPC>());
+                    }
+                }
+            }
         }
 
         void Talk(NPC target)
@@ -76,17 +96,22 @@ namespace Yarn.Unity.Example
         void Take(GameObject item)
         {
             //Take item and give dialogue
-            inventory.Add(item.name);
+            print(item.name);
+            inventory.GiveItem(item.name);
             Destroy(item);
         }
 
-        void Look()
+        void Look(NPC thingToLookAt)
         {
             //Give description of item in textbox
+            Talk(thingToLookAt);
         }
 
-        //How to do commands?
-        //Commands could be consolidated into pressing E next to things?
+        void Use()
+        {
+            Debug.Log("A use!");
+            Talk(selectedItem.GetComponent<NPC>());
+            selectedItem.UpdateItem(null);
+        }
     }
-
 }

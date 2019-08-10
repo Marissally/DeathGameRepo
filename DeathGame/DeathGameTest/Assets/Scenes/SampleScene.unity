@@ -1191,7 +1191,7 @@ GameObject:
   - component: {fileID: 880006829}
   - component: {fileID: 880006828}
   m_Layer: 0
-  m_Name: Capsule (1)
+  m_Name: Character
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1208,8 +1208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3419b57eb638f44db88701b5b33b8af8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: CharacterTest
-  talkToNode: SimpleExampleScript
+  characterName: SimpleExampleScript
+  talkToNode: Start
   scriptToLoad: {fileID: 0}
 --- !u!136 &880006829
 CapsuleCollider:
@@ -2378,8 +2378,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllable: 0
-  inventory: []
+  inventory: {fileID: 0}
   TalkUI: {fileID: 1782783847}
+  selectedItem: {fileID: 0}
 --- !u!136 &2004329473
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2608,7 +2609,7 @@ GameObject:
   - component: {fileID: 2094627610}
   - component: {fileID: 2094627609}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: TestItem
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
